@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : CharacterMovement
 {
     [SerializeField] private float _jumpForce;
@@ -36,7 +37,7 @@ public class PlayerMovement : CharacterMovement
     {
         if (Input.GetKey(KeyCode.D))
         {
-            TransformComponent.Translate(_velocity * Time.deltaTime, 0, 0);
+            transform.Translate(_velocity * Time.deltaTime, 0, 0);
             isMoving = true;
         }
     }
@@ -45,7 +46,7 @@ public class PlayerMovement : CharacterMovement
     {
         if (Input.GetKey(KeyCode.A))
         {
-            TransformComponent.Translate(_velocity * Time.deltaTime * -1, 0, 0);
+            transform.Translate(_velocity * Time.deltaTime * -1, 0, 0);
             isMoving = true;
         }
     }

@@ -26,7 +26,7 @@ public class EnemyMovement : CharacterMovement
 
     protected override void Move()
     {
-        TransformComponent.position = Vector2.MoveTowards(TransformComponent.position, _destination, _velocity * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _destination, _velocity * Time.deltaTime);
     }
 
     private void ChangeDestination()

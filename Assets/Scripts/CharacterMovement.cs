@@ -9,14 +9,12 @@ public abstract class CharacterMovement : MonoBehaviour
     [SerializeField] protected float _velocity;
 
     protected bool isMoving = false;
-    protected Transform TransformComponent;
     private Animator _animator;
     private SpriteRenderer _spriteRenderer;
     private float _prevoiosPositionX;
 
     protected virtual void Awake()
     {
-        TransformComponent = GetComponent<Transform>();
         _animator = GetComponent<Animator>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -39,7 +37,7 @@ public abstract class CharacterMovement : MonoBehaviour
     {
         if (isMoving)
         {
-            float currentPositionX = TransformComponent.position.x;
+            float currentPositionX = transform.position.x;
             _spriteRenderer.flipX = (_prevoiosPositionX - currentPositionX) > 0;
             _prevoiosPositionX = currentPositionX;
         }
